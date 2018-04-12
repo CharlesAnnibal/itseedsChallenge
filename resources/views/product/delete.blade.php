@@ -9,8 +9,7 @@
                 <p>Created at:  {{$product->created_at}}</p>
                 <p>Updated at:  {{$product->updated_at}}</p>
 
-                <a href="{{route('update',$product->id)}}" class="btn-success btn btn-lg">Edit</a>
-                <a href="{{route('delete',$product->id)}}" class="btn-success delete btn btn-lg">Delete</a>
+                <a href="{{route('destroy',$product->id)}}" class="btn-success btn btn-lg">Confirm Delete</a>
                 <a href="{{route('index')}}" class="btn-success btn btn-lg">Back</a>
                 
             </div>

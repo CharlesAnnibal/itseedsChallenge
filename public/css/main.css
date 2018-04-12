@@ -55,3 +55,15 @@ a {
     border:solid 1px #333;
     padding: 10px;
 }
+
+.table tbody{
+    width:100%;
+}
+
+.form{
+    width:100%;
+}
+
+.float-right{
+    right:5%;
+}

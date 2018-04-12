@@ -1,15 +1,15 @@
 @extends('layout.main')
 @section('content')
     
-        <h2>{{$title}}</h2>
+<h2>{{$title}}</h2>
         
-            <form class="form" method="POST" action="{{ route('create-submit') }}">
+            <form class="form" method="POST" action="{{ route('update-submit',$product->id) }}">
                 <div class="form-group">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-6 {{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label">Nome</label>
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ $product->name }}" required autofocus>
                             @if ($errors->has('name'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('name') }}</strong>
@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-6 {{ $errors->has('cost') ? ' has-error' : '' }}">
                             <label for="cost" class="control-label">Cost</label>
-                            <input id="cost" type="text" class="form-control" name="cost" value="{{ old('cost') }}" required autofocus>
+                            <input id="cost" type="text" class="form-control" name="cost" value="{{ $product->cost }}" required autofocus>
                             @if ($errors->has('cost'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('cost') }}</strong>

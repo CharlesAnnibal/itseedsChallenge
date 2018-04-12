@@ -13,8 +13,14 @@
 
 Route::get('/', 'ProductController@index');
 Route::get('/index', 'ProductController@index');
-Route::get('/product', 'ProductController@index');
-Route::get('/product-create', 'ProductController@create');
-Route::get('/product-show', 'ProductController@show')->name('product-show');
-Route::get('/product-update', 'ProductController@update');
-Route::get('/product-delete', 'ProductController@delete');
+Route::get('/product', 'ProductController@index')->name('index');
+Route::get('/create', 'ProductController@create')->name('create');
+Route::get('/show/{id}', 'ProductController@show')->name('show');
+Route::get('/update/{id}', 'ProductController@edit')->name('update');
+Route::get('/delete/{id}', 'ProductController@delete')->name('delete');
+Route::get('/destroy/{id}', 'ProductController@destroy')->name('destroy');
+
+Route::post('/update-submit/{id}', 'ProductController@save')->name('update-submit');
+Route::post('/create-submit', 'ProductController@insert')->name('create-submit');
+
+
