@@ -17,12 +17,12 @@
                         <th>Actions</th>
                     </tr>
                     @forelse($products as $product)
-                        <tr> 
+                        <tr class="productRow" value="{{$product->id}}"> 
                             <td>&nbsp;</td>
                             <td>{{$product->name}}</td>
                             <td>R${{number_format($product->cost, 2)}}</td>
                             <td>
-                                <a href="{{route('update',$product->id)}}" >Edit</a>
+                                <a href="{{route('edit',$product->id)}}" >Edit</a>
                                 <a href="{{route('delete',$product->id)}}" class="delete" name="{{$product->name}}">Delete</a>
                             </td>
                         </tr> 
@@ -34,8 +34,12 @@
         </div>
         
         <div class="row">
-            {{ $products->links() }} 
-            <a href="{{route('create')}}" class="btn-success btn btn-lg float-right">Create</a>
+            <div class="col-10">
+                {{ $products->links() }} 
+            </div>
+            <div class="col-2">
+                <a href="{{route('create')}}" class="btn-success btn btn-lg float-right ">Create a new product</a>
+            </div>
         </div>
-
+  
 @endsection

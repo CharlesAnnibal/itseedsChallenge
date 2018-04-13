@@ -1,3 +1,22 @@
+<h2>ItSeeds Challenge</h2>
+
+<p>Developer: Charles Annibal - Rio de Janeiro - Brazil</p>
+<p>To execute the project with a Laravel development server you need go to the project folder and execute the command "php artisan serve".
+But the url will be like 127.0.0.1:8000</p>
+
+
+<p>To execute the project in a shared host or in a http local server you need put the project folder one level under htdocs folder and copy content from public folder and paste into htdocs folder.<p>
+<p>Is necessary change the file index.php onto htdocs folder:</p>
+<br>
+<p>Set "require __DIR__.'/../vendor/autoload.php';" to "require __DIR__.'/../itseeds/vendor/autoload.php';"</p>
+<br>
+<p>and "require __DIR__.'/../vendor/bootstrap/app.php';" to "require __DIR__.'/../itseeds/bootstrap/app.php';"</p>
+
+<p>To access the product API you need an app like postman https://www.getpostman.com/</p>
+
+<p>Set the url to 127.0.0.1/api/product to access the API created with Laravel</p>
+<p>You cannot access the url by browser</p>
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">

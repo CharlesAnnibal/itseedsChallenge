@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-6 {{ $errors->has('cost') ? ' has-error' : '' }}">
                             <label for="cost" class="control-label">Cost</label>
-                            <input id="cost" type="text" class="form-control" name="cost" value="{{ $product->cost }}" required autofocus>
+                            <input id="cost" type="text" class="form-control" name="cost" value="{{ $product->cost }}" maxlength="10" required autofocus>
                             @if ($errors->has('cost'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('cost') }}</strong>
@@ -26,8 +26,8 @@
                             @endif
                         </div>
                         <div class="mx-auto">
-                            <input  type="submit" class="btn btn-success btn-lg" name="submit" >
-                            <a href="{{route('index')}}" class="btn-success btn btn-lg">Back</a>
+                            <input  type="submit" class="btn btn-success btn-lg btn-form" name="submit" value="Submit">
+                            <a href="{{route('index')}}" class="btn-success btn btn-lg btn-form">Back</a>
                         </div>
                     </div>    
                 </div>

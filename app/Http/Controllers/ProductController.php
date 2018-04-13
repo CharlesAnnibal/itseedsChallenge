@@ -14,11 +14,9 @@ class ProductController extends Controller
 
 
     public function show(Product $objProduct,$id){
-        $product = $objProduct->where('id',$id)
-                        ->get()
-                        ->first();
+        $product = $objProduct->find($id);
         $title = "Product: ".$product->name;                
-        return view('product.description', compact('title', 'product'));
+        return view('product.show', compact('title', 'product'));
     }
 
 
@@ -34,6 +32,16 @@ class ProductController extends Controller
         return view('product.edit', compact('title', 'product'));
     }
 
+    public function destroy(Product $objProduct,Request $request,$id){
+        $product = $objProduct->find($id);
+        $deleted = $product->delete();
+        if(!$deleted)
+            $message = 'Product not deleted!';
+        else
+            $message = 'Product deleted!';
+        return redirect('index')->with('message', $message);
+    }
+
     public function delete(Product $objProduct,$id){
         $product = $objProduct->where('id',$id)
                         ->get()
@@ -45,7 +53,7 @@ class ProductController extends Controller
     public function save(Product $objProduct,Request $request,$id){
         $product = $objProduct->find($id);
         $product->name = $request->name;
-        $product->cost = $request->cost;
+        $product->cost = str_replace(",","",$request->cost);
         $saved = $product->save();
         if(!$saved)
             $message = "Product hasnt updated.";
@@ -57,7 +65,7 @@ class ProductController extends Controller
     public function insert(Request $request){
         $product = new Product;
         $product->name = $request->name;
-        $product->cost = $request->cost;
+        $product->cost = str_replace(",","",$request->cost);
         $saved = $product->save();
         if(!$saved)
             $message = "Product hasnt created.";
@@ -66,13 +74,4 @@ class ProductController extends Controller
         return redirect('index')->with('message', $message);
     }
 
-    public function destroy(Product $objProduct,Request $request,$id){
-        $product = $objProduct->find($id);
-        $deleted = $product->delete();
-        if(!$deleted)
-            $message = 'Product not deleted!';
-        else
-            $message = 'Product deleted!';
-        return redirect('index')->with('message', $message);
-    }
 }

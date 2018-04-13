@@ -16,7 +16,7 @@ Route::get('/index', 'ProductController@index');
 Route::get('/product', 'ProductController@index')->name('index');
 Route::get('/create', 'ProductController@create')->name('create');
 Route::get('/show/{id}', 'ProductController@show')->name('show');
-Route::get('/update/{id}', 'ProductController@edit')->name('update');
+Route::get('/edit/{id}', 'ProductController@edit')->name('edit');
 Route::get('/delete/{id}', 'ProductController@delete')->name('delete');
 Route::get('/destroy/{id}', 'ProductController@destroy')->name('destroy');
 
