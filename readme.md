@@ -4,9 +4,11 @@
 <h2>Laravel version: 5.5<h2>
 <h2>Instructions<h2>
 <br>
-<h4>Execute with the Laravel development server</h4>
+
 <p>You need set the database configs in <b>.env</b> file </p>
 <p>You need execute the command "composer update" to load the dependencies of project.</p>
+
+<h4>Execute with the Laravel development server</h4>
 <p>To execute the project with a Laravel development server you need go to the project folder and execute the command "php artisan serve".
 But the url will be like 127.0.0.1:8000</p>
 
