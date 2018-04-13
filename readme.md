@@ -4,11 +4,13 @@
 <h2>Instructions<h2>
 <br>
 <h4>Execute with the Laravel development server</h4>
+<p>You need set the database configs in <b>.env</b> file </p>
+<p>You need execute the command "composer update" to load the dependencies of project.</p>
 <p>To execute the project with a Laravel development server you need go to the project folder and execute the command "php artisan serve".
 But the url will be like 127.0.0.1:8000</p>
 
 <h4>Execute in a shared host or http server like apache or a WAMP</h4>
-<p>To execute the project in a shared host or in a http local server you need put the project folder one level under htdocs folder and copy content from public folder and paste into htdocs folder.<p>
+<p>To execute the project in a shared host or in a http local server you need put the project folder one level under <b>htdocs</b> folder and copy content from itseedsChallenge/<b>public</b> folder and paste into <b>htdocs</b> folder.<p>
 <p>Is necessary change the file index.php onto htdocs folder:</p>
 <br>
 <p>Set "require __DIR__.'/../vendor/autoload.php';" to "require __DIR__.'/../itseeds/vendor/autoload.php';"</p>
