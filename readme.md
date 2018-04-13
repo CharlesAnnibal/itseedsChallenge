@@ -1,6 +1,7 @@
 <h2>ItSeeds Challenge</h2>
 
 <p>Developer: Charles Annibal - Rio de Janeiro - Brazil</p>
+<h2>Laravel version: 5.5<h2>
 <h2>Instructions<h2>
 <br>
 <h4>Execute with the Laravel development server</h4>
@@ -16,6 +17,10 @@ But the url will be like 127.0.0.1:8000</p>
 <p>Set "require __DIR__.'/../vendor/autoload.php';" to "require __DIR__.'/../itseeds/vendor/autoload.php';"</p>
 <br>
 <p>and "require __DIR__.'/../vendor/bootstrap/app.php';" to "require __DIR__.'/../itseeds/bootstrap/app.php';"</p>
+
+<h4>Migrations and seeds</h4>
+<p>To run the migrations execute the command php artisan migrate</p>
+<p>To run the seeds execute the command php artisan db:seed --class=ProductTableSeeder</p>
 
 <h4>Access the API</h4>
 <p>To access the product API you need an app like postman https://www.getpostman.com/</p>
